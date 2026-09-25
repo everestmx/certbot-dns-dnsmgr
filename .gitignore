@@ -1,0 +1,16 @@
+# Credentials
+*.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+.DS_Store

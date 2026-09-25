@@ -1,0 +1,60 @@
+[project]
+name = "certbot-dns-dnsmgr"
+version = "1.0.0"
+description = "DNSmanager (ISPsystem) DNS Authenticator plugin for Certbot"
+authors = [
+    { name = "Dmitry Sergeev", email = "everestmx@gmail.com" }
+]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["certbot", "dns", "dnsmanager", "dnsmgr", "ispsystem", "letsencrypt", "acme", "dns-01", "authenticator", "plugin"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Plugins",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: Name Service (DNS)",
+    "Topic :: Security",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "acme>=2.11.0",
+    "certbot>=2.11.0",
+    "requests",
+]
+
+[project.urls]
+Homepage = "https://github.com/everestmx/certbot-dns-dnsmgr"
+Source = "https://github.com/everestmx/certbot-dns-dnsmgr"
+Issues = "https://github.com/everestmx/certbot-dns-dnsmgr/issues"
+
+[project.entry-points."certbot.plugins"]
+dns-dnsmgr = "certbot_dns_dnsmgr.dns_dnsmgr:Authenticator"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+# Only ship the package and docs: the project root may contain real
+# credentials (e.g. dnsmgr.ini) and IDE files.
+[tool.hatch.build.targets.sdist]
+only-include = ["certbot_dns_dnsmgr", "README.md", "LICENSE", "pyproject.toml"]
+exclude = ["__pycache__", "*.pyc"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["certbot_dns_dnsmgr"]
+exclude = ["__pycache__", "*.pyc"]
