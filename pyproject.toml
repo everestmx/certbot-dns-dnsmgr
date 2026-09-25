@@ -1,6 +1,6 @@
 [project]
 name = "certbot-dns-dnsmgr"
-version = "1.0.0"
+version = "1.0.1"
 description = "DNSmanager (ISPsystem) DNS Authenticator plugin for Certbot"
 authors = [
     { name = "Dmitry Sergeev", email = "everestmx@gmail.com" }
@@ -32,8 +32,8 @@ classifiers = [
     "Topic :: Utilities",
 ]
 dependencies = [
-    "acme>=2.11.0",
-    "certbot>=2.11.0",
+    "acme>=2.1.0",
+    "certbot>=2.1.0",
     "requests",
 ]
 
